@@ -5,6 +5,7 @@ header.setAttribute('id', 'c-header')
 const sair = () => {
     sessionStorage.clear()
     window.open('#login', '_self')
+    window.location.reload();
     console.log("saiu");
 }
 
