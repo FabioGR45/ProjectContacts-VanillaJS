@@ -11,6 +11,7 @@ const todosContatos = document.createElement('div')
 const adicionarContato = (event) => {
     event.preventDefault()
     window.open('#criar-contato ', '_self')
+    window.location.reload();
 }
 
 
