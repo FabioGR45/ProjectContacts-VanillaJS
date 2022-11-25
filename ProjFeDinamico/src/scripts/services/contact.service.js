@@ -1,25 +1,12 @@
-import { Contatos } from "../pages/contatos.page";
-
 const baseUrl = 'http://localhost:5000/v1/'
 //const token = sessionStorage.getItem("@token")
 
 //headers.delete('Authorization');
 
-/*export const ContactGetByID = async () => {
-    const headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-
-    const token = await sessionStorage.getItem ("@token");
-    headers.append('Authorization', token);
-
-    const response = await fetch(baseUrl + 'contact/'+ , { headers, method: "GET" })
-    return await response.json()
-}*/
-
-
 export const ContactGet = async () => {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
+
 
     const token = await sessionStorage.getItem ("@token");
     headers.append('Authorization', token);
@@ -56,4 +43,3 @@ export const ContactPost = async (formData) => {
     const response = await fetch(baseUrl + 'contact', { headers, body, method: "POST" })
     return await response.json()
 }
-

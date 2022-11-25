@@ -12,6 +12,7 @@ function redirectPages() {
         '#contatos': { component: Contatos, path: '#contatos' },
         '#criar-contato': { component: CriarContato, path: '#criar-contato' },
         '#404': { component: Login, path: '#404' }
+
     }
 
     let route;
