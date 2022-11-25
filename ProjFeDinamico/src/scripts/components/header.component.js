@@ -18,8 +18,15 @@ export const Header = () => {
     const user = JSON.parse(sessionStorage.getItem('@user'))
 
     header.innerHTML = `
-        <label>${user?.nome}</label>
-        <button id="sair">Sair</button>
+
+    <style>
+        
+    @import url('./src/styles/header.component.css');
+
+    </style>
+
+        <label class = "name">${user?.nome}</label>
+        <button  id="sair" class = "button-header">Sair</button>
     `
     events()
     return header

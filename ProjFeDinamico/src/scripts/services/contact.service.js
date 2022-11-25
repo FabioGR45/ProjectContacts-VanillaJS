@@ -9,7 +9,7 @@ export const ContactGet = async () => {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
-    const token = sessionStorage.getItem ("@token");
+    const token = await sessionStorage.getItem ("@token");
     headers.append('Authorization', token);
 
     const response = await fetch(baseUrl + 'contact', { headers, method: "GET" })
@@ -21,7 +21,7 @@ export const ContactPost = async (formData) => {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
-    const token = sessionStorage.getItem ("@token");
+    const token = await sessionStorage.getItem ("@token");
     headers.append('Authorization', token);
 
     const obj = Object.fromEntries(formData)

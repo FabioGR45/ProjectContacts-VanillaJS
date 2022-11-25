@@ -12,8 +12,8 @@ const entrar = async (event) => {
     console.log(response);
     if(response.status === 200) {
         const {token, ...user} = response.data
-        sessionStorage.setItem('@user', JSON.stringify(user))
-        sessionStorage.setItem('@token', token)
+         sessionStorage.setItem('@user', JSON.stringify(user))
+         sessionStorage.setItem('@token', token)
 
         window.open('#contatos', '_self')
     }
