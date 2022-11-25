@@ -1,5 +1,6 @@
 import { Contatos } from "./src/scripts/pages/contatos.page.js";
 import { CriarConta } from "./src/scripts/pages/criar-conta.page.js";
+import { CriarContato } from "./src/scripts/pages/criar-contato.js";
 import { Login } from "./src/scripts/pages/login.page.js"
 
 function redirectPages() {
@@ -9,6 +10,7 @@ function redirectPages() {
         '#login': { component: Login, path: '#login' },
         '#criar-conta': { component: CriarConta, path: '#criar-conta' },
         '#contatos': { component: Contatos, path: '#contatos' },
+        '#criar-contato': { component: CriarContato, path: '#criar-contato' },
         '#404': { component: Login, path: '#404' }
     }
 

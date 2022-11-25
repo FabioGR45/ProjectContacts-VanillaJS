@@ -5,6 +5,7 @@ import { ContactGet } from "../services/contact.service.js"
 const root = document.getElementById('root')
 const contacts = document.createElement('form')
 contacts.setAttribute('id', 'p-contatos')
+const todosContatos = document.createElement('div')
 
 const adicionarContato = (event) => {
     event.preventDefault()
@@ -25,7 +26,7 @@ export const Contatos = async () => {
     console.log("oi")
 
     contacts.innerHTML = `
-    <button>Adicionar contato</button>
+    <button id="btn-criar">Adicionar contato</button>
     `
 
     const ordenarContatos = constatos.data.sort((a, b) => {
@@ -35,7 +36,7 @@ export const Contatos = async () => {
     console.log(ordenarContatos)
 
     ordenarContatos.forEach((contato) => {
-        contacts.innerHTML += (`
+        todosContatos.innerHTML += (`
             <h1>${contato.nome}</h1>
             <img src="data:image/jpeg;base64,${contato.foto}"/>
             <hr />
@@ -45,5 +46,6 @@ export const Contatos = async () => {
     events()
 
     root.append(contacts)
+    root.append(todosContatos)
     return contacts
 }
