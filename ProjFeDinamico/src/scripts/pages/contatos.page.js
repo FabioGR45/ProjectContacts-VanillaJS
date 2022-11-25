@@ -13,17 +13,17 @@ const adicionarContato = (event) => {
     window.open('#criar-contato ', '_self')
 }
 
-/*const contatoDetalhado = (event) => {
-    event.preventDefault()
+const contatoDetalhado = (contato) => {
+    contato.preventDefault()
+    sessionStorage.setItem('@contato', contato)
     window.open('#contato-detalhado ', '_self')
-}*/
+}
 
 
 const events = () => {
     contacts.addEventListener('click', adicionarContato)
-    //contacts.addEventListener('click', contatoDetalhado)
+   
 }
-
 
 export const Contatos = async () => {
     const header = Header()
@@ -65,6 +65,8 @@ export const Contatos = async () => {
     console.log(ordenarContatos)
 
     ordenarContatos.forEach((contato) => {
+
+        contato.addEventListener('click', ()=> contatoDetalhado(contato))
         todosContatos.innerHTML += (`
             
             <div class = "btn-contato">
