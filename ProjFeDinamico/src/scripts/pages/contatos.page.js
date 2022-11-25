@@ -23,10 +23,17 @@ export const Contatos = async () => {
     const constatos = await ContactGet()
     console.log(constatos);
 
-    console.log("oi")
-
     contacts.innerHTML = `
+
+    <style>
+        
+    @import url('./src/styles/contatos.css');
+
+    </style>
+    
+    <div class="container-contato">
     <button id="btn-criar">Adicionar contato</button>
+    </div>
     `
 
     const ordenarContatos = constatos.data.sort((a, b) => {
@@ -47,5 +54,7 @@ export const Contatos = async () => {
 
     root.append(contacts)
     root.append(todosContatos)
+
+
     return contacts
 }

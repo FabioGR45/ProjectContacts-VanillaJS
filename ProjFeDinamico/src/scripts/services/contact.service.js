@@ -1,17 +1,29 @@
 const baseUrl = 'http://localhost:5000/v1/'
-const token = sessionStorage.getItem("@token")
+//const token = sessionStorage.getItem("@token")
 
-const headers = new Headers()
-headers.append('Content-Type', 'application/json')
-headers.delete('Authorization');
-headers.append('Authorization', token)
+
+//headers.delete('Authorization');
+
 
 export const ContactGet = async () => {
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+
+    const token = sessionStorage.getItem ("@token");
+    headers.append('Authorization', token);
+
     const response = await fetch(baseUrl + 'contact', { headers, method: "GET" })
     return await response.json()
 }
 
 export const ContactPost = async (formData) => {
+    
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+
+    const token = sessionStorage.getItem ("@token");
+    headers.append('Authorization', token);
+
     const obj = Object.fromEntries(formData)
     
     // verifico se tem a propriedade telefones no objeto, se existir quer dizer que tem telefones enviados 
