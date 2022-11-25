@@ -20,13 +20,11 @@ export const Header = () => {
     header.innerHTML = `
 
     <style>
-        
     @import url('./src/styles/header.component.css');
-
     </style>
 
         <label class = "name">${user?.nome}</label>
-        <button  id="sair" class = "button-header">Sair</button>
+        <button  id="sair" class = "button-header">Sair</button> 
     `
     events()
     return header

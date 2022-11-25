@@ -24,11 +24,13 @@ const events = () => {
     //contacts.addEventListener('click', contatoDetalhado)
 }
 
+
 export const Contatos = async () => {
     const header = Header()
     root.append(header)
 
     const constatos = await ContactGet()
+    
     console.log(constatos);
     
     contacts.innerHTML = `

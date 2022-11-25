@@ -1,9 +1,7 @@
 const baseUrl = 'http://localhost:5000/v1/'
 //const token = sessionStorage.getItem("@token")
 
-
 //headers.delete('Authorization');
-
 
 export const ContactGet = async () => {
     const headers = new Headers();
